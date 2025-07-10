@@ -19,13 +19,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 python run.py
 
-
-
-
-
-
-
-
 ---
 
 ### ✅ 11. Add Logging (optional but recommended)
@@ -42,3 +35,13 @@ logging.info("Student created: %s", new_student.name)
 
 # SRE-Bootcamp
 # SRE-Bootcamp
+
+-----
+
+## 🐳 Docker
+
+Build Docker Image:
+
+```bash
+make build
+
