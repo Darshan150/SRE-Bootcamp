@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: dipakrasal2009/rest-api-webserver
+  IMAGE_NAME: darshanvarude/rest-api-webserver
 
 jobs:
   build-and-push:
