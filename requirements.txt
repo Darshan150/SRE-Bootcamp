@@ -1,7 +1,20 @@
-Flask==2.3.3
-Flask-SQLAlchemy==3.1.1
-Werkzeug==2.3.7
-itsdangerous==2.1.2
-click==8.1.7
-Jinja2==3.1.2
-MarkupSafe==2.1.3
+# Core application dependencies
+flask
+flask_sqlalchemy
+
+# If using SQLite specifically (optional, usually included with Python)
+pysqlite3-binary
+
+# For Python-dotenv if using environment variables
+python-dotenv
+
+# Linting
+flake8
+
+# Testing
+pytest
+pytest-flask
+
+# Optional: Migrations (if using Flask-Migrate or Alembic)
+flask-migrate
+

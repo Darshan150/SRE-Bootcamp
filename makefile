@@ -1,24 +1,17 @@
-.PHONY: db build run run-api stop clean logs
+.PHONY: build-api test lint
 
-db:
-	echo "Starting DB container..."
-	docker compose up -d migrate
+build-api:
+	@echo "Building REST API Docker image..."
+	docker build -t dipakrasal2009/rest-api-webserver:latest .
 
-build:
-	echo "Building REST API image..."
-	docker compose build api
+test:
+	@echo "Running tests with pytest..."
+	PYTHONPATH=. pytest tests/
 
-run-api:
-	echo "Running API container..."
-	docker compose up -d api
+#lint:
+#	@echo "Running code linting with flake8..."
+#	flake8 app/ tests/
+lint:
+	@echo "Running code linting with flake8..."
+	flake8 app/ tests/ --ignore=F401,F841,E302,E303,E305,E402,E501,W391,F811,E265
 
-run: db build run-api
-
-stop:
-	docker compose down
-
-clean:
-	docker compose down -v
-
-logs:
-	docker compose logs -f
